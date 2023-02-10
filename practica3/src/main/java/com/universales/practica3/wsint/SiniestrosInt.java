@@ -11,23 +11,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.universales.practica3.dto.UsuarioDTO;
-import com.universales.practica3.entity.Usuario;
+import com.universales.practica3.dto.SiniestrosDTO;
+import com.universales.practica3.entity.Siniestros;
 
 @RestController
-@RequestMapping("/noauth/usuarios")
+@RequestMapping("/auth/siniestros")
 @CrossOrigin
-public interface UsuarioInt {
+public interface SiniestrosInt {
+
 	@GetMapping("/buscar")
-	List<Usuario> buscarUsuario();
-
+	List<Siniestros> buscar();
+	
 	@PostMapping("/guardar")
-	Usuario guardar(@RequestBody UsuarioDTO usuario);
+	Siniestros guardar(@RequestBody SiniestrosDTO siniestros);
 
-	@DeleteMapping(path = "/eliminar/{idUsuario}")
-	void eliminar(@PathVariable("idUsuario") Integer idUsuario);
-
-	@GetMapping("/buscar/por/{idUsuario}")
-	List<Usuario> buscarPorIdUsuario(@PathVariable("idUsuario") Integer idUsuario);
+	@DeleteMapping(path = "/eliminar/{idSiniestro}")
+	void eliminar(@PathVariable("idSiniestro") Integer idSiniestro);
+	
+	
 
 }

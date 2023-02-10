@@ -1,4 +1,4 @@
---Creación de usuario Seguni
+--Creaciï¿½n de usuario Seguni
 alter session set "_ORACLE_SCRIPT"=true;
 create user seguni identified by seguni;
 GRANT ALL PRIVILEGES TO seguni;
@@ -38,7 +38,7 @@ DPI_CLIENTE INT,
 CONSTRAINT pk_seguros primary key(NUMERO_POLIZA),
 CONSTRAINT fk_seguros_clientes foreign key (DPI_CLIENTE) references CLIENTES(DPI_CLIENTE)
 );
-drop table siniestros;
+
 CREATE TABLE SINIESTROS(
 ID_SINIESTRO INT NOT NULL,
 FECHA_SINIESTRO DATE,
@@ -72,8 +72,6 @@ CIUDAD VARCHAR(255),
 CONSTRAINT pk_peritos primary key(DPI_PERITO)
 );
 
-ALTER TABLE PERITOS
-MODIFY TELEFONO_PERITO1 VARCHAR(255);
 
 CREATE TABLE COMPANIAS_SEGUROS(
 ID INT NOT NULL,
@@ -96,7 +94,7 @@ NOTAS VARCHAR(255),
 CONSTRAINT pk_companias primary key (NOMBRE_COMPANIA)
 );
 
---Selección de datos--
+--Selecciï¿½n de datos--
 SELECT * FROM USUARIO;
 SELECT * FROM CLIENTES;
 SELECT * FROM SEGUROS;
@@ -119,12 +117,12 @@ insert into USUARIO (id_usuario, usuario, contrasena) values (9, 'kkinforth8', '
 insert into USUARIO (id_usuario, usuario, contrasena) values (10, 'caslin9', '9Sscw6iKUX');
 
 insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via, nombre_via, numero_via, cod_postal, ciudad, telefono) values (959991787, 'Gannon', 'Beall', 'Ellard', 'Negeri Sembilan', 'Tennyson', '5', '70536', 'Seremban', '6202804516');
-insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via, nombre_via, numero_via, cod_postal, ciudad, telefono) values (3529394415, 'Spike', 'Dany', 'Marchington', 'Porto', 'Arizona', '6', '4785-132', 'Castêlo', '3752764039');
-insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via, nombre_via, numero_via, cod_postal, ciudad, telefono) values (4673007711, 'Chrysler', 'Godbold', 'Pelos', 'Kronoberg', 'Center', '99', '351 88', 'Växjö', '2474172593');
+insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via, nombre_via, numero_via, cod_postal, ciudad, telefono) values (3529394415, 'Spike', 'Dany', 'Marchington', 'Porto', 'Arizona', '6', '4785-132', 'Castï¿½lo', '3752764039');
+insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via, nombre_via, numero_via, cod_postal, ciudad, telefono) values (4673007711, 'Chrysler', 'Godbold', 'Pelos', 'Kronoberg', 'Center', '99', '351 88', 'Vï¿½xjï¿½', '2474172593');
 insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via, nombre_via, numero_via, cod_postal, ciudad, telefono) values (9934031221, 'Kingsley', 'Bishopp', 'Swinfen', 'Illinois', 'Warner', '86', '60567', 'Naperville', '6306093577');
 insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via, nombre_via, numero_via, cod_postal, ciudad, telefono) values (8379174608, 'Muire', 'Randalston', 'Swatradge', 'Mexico', 'Evergreen', '27', '54783', 'Santo Tomas', '1479979157');
-insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via, nombre_via, numero_via, cod_postal, ciudad, telefono) values (103928061, 'Phaidra', 'Westwater', 'Shaul', 'Champagne-Ardenne', 'Ridge Oak', '32387', '51039 CEDEX', 'Châlons-en-Champagne', '7666367090');
-insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via, nombre_via, numero_via, cod_postal, ciudad, telefono) values (6686629157, 'Averell', 'Latey', 'Ballard', 'Skåne', 'Springview', '6100', '264 31', 'Klippan', '9678081662');
+insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via, nombre_via, numero_via, cod_postal, ciudad, telefono) values (103928061, 'Phaidra', 'Westwater', 'Shaul', 'Champagne-Ardenne', 'Ridge Oak', '32387', '51039 CEDEX', 'Chï¿½lons-en-Champagne', '7666367090');
+insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via, nombre_via, numero_via, cod_postal, ciudad, telefono) values (6686629157, 'Averell', 'Latey', 'Ballard', 'Skï¿½ne', 'Springview', '6100', '264 31', 'Klippan', '9678081662');
 insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via, nombre_via, numero_via, cod_postal, ciudad, telefono) values (5617135828, 'Arvin', 'Alflatt', 'Doorey', 'Pays de la Loire', 'Ruskin', '5116', '44324 CEDEX 3', 'Nantes', '1002410517');
 insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via, nombre_via, numero_via, cod_postal, ciudad, telefono) values (2758422762, 'Wynny', 'Lomath', 'Boyle', 'Lisboa', 'Havey', '7', '2655-082', 'Fonte Boa da Brincosa', '3831305954');
 insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via, nombre_via, numero_via, cod_postal, ciudad, telefono) values (6962426483, 'Flori', 'Kropach', 'Metcalfe', 'Halland', 'Claremont', '5513', '434 33', 'Kungsbacka', '6361097256');
@@ -142,16 +140,16 @@ insert into SEGUROS (numero_poliza, fecha_inicio, fecha_vencimiento, dpi_cliente
 insert into SEGUROS (numero_poliza, fecha_inicio, fecha_vencimiento, dpi_cliente) values (3494643261, '05/08/2021', '06/02/2023', 6962426483);
 
 insert into PERITOS (dpi_perito, nombre_perito, apellido_perito1, apellido_perito2, telefono_contacto, telefono_oficina, clase_via, nombre_via, numero_via, cod_postal, ciudad) values (9073562873, 'Emmye', 'Foulsham', 'Ca', '1016145643', '9263007675', 'Lorraine', 'Helena', '04', '57304 CEDEX', 'Hagondange');
-insert into PERITOS (dpi_perito, nombre_perito, apellido_perito1, apellido_perito2, telefono_contacto, telefono_oficina, clase_via, nombre_via, numero_via, cod_postal, ciudad) values (7764279789, 'Minny', 'Beran', 'Maeer', '8012818208', '6823165946', 'Kronoberg', 'Sherman', '42', '351 06', 'Växjö');
-insert into PERITOS (dpi_perito, nombre_perito, apellido_perito1, apellido_perito2, telefono_contacto, telefono_oficina, clase_via, nombre_via, numero_via, cod_postal, ciudad) values (9796169800, 'Gae', 'Camillo', 'Awdry', '9059069016', '9795627342', 'Île-de-France', 'Sundown', '509', '95234', 'Soisy-sous-Montmorency');
+insert into PERITOS (dpi_perito, nombre_perito, apellido_perito1, apellido_perito2, telefono_contacto, telefono_oficina, clase_via, nombre_via, numero_via, cod_postal, ciudad) values (7764279789, 'Minny', 'Beran', 'Maeer', '8012818208', '6823165946', 'Kronoberg', 'Sherman', '42', '351 06', 'Vï¿½xjï¿½');
+insert into PERITOS (dpi_perito, nombre_perito, apellido_perito1, apellido_perito2, telefono_contacto, telefono_oficina, clase_via, nombre_via, numero_via, cod_postal, ciudad) values (9796169800, 'Gae', 'Camillo', 'Awdry', '9059069016', '9795627342', 'ï¿½le-de-France', 'Sundown', '509', '95234', 'Soisy-sous-Montmorency');
 insert into PERITOS (dpi_perito, nombre_perito, apellido_perito1, apellido_perito2, telefono_contacto, telefono_oficina, clase_via, nombre_via, numero_via, cod_postal, ciudad) values (6293375670, 'Sula', 'Davidovic', 'Gage','6176829526', '6143112864', 'Massachusetts', 'International', '635', '02162', 'Newton');
 insert into PERITOS (dpi_perito, nombre_perito, apellido_perito1, apellido_perito2, telefono_contacto, telefono_oficina, clase_via, nombre_via, numero_via, cod_postal, ciudad) values (6983230122, 'Melinde', 'Yarnell', 'Le Provest', '6378118809', '4064756543', 'Porto', 'Eastlawn', '90848', '4485-824', 'Vilar do Pinheiro');
 insert into PERITOS (dpi_perito, nombre_perito, apellido_perito1, apellido_perito2, telefono_contacto, telefono_oficina, clase_via, nombre_via, numero_via, cod_postal, ciudad) values (415871194, 'Lonnie', 'Hackelton', 'Baszniak', '3147776632', '2512244106', 'Missouri', 'Texas', '79418', '63121', 'Saint Louis');
-insert into PERITOS (dpi_perito, nombre_perito, apellido_perito1, apellido_perito2, telefono_contacto, telefono_oficina, clase_via, nombre_via, numero_via, cod_postal, ciudad) values (8922876562, 'Engracia', 'Waudby', 'Placidi', '3423438854', '6557474507', 'Östergötland', 'Summit', '84', '589 00', 'Linköping');
-insert into PERITOS (dpi_perito, nombre_perito, apellido_perito1, apellido_perito2, telefono_contacto, telefono_oficina, clase_via, nombre_via, numero_via, cod_postal, ciudad) values (1263040481, 'Consalve', 'Champneys', 'Geer', '2212450521', '2621636607', 'Setúbal', 'Northwestern', '356', '2830-152', 'Santo André');
+insert into PERITOS (dpi_perito, nombre_perito, apellido_perito1, apellido_perito2, telefono_contacto, telefono_oficina, clase_via, nombre_via, numero_via, cod_postal, ciudad) values (8922876562, 'Engracia', 'Waudby', 'Placidi', '3423438854', '6557474507', 'ï¿½stergï¿½tland', 'Summit', '84', '589 00', 'Linkï¿½ping');
+insert into PERITOS (dpi_perito, nombre_perito, apellido_perito1, apellido_perito2, telefono_contacto, telefono_oficina, clase_via, nombre_via, numero_via, cod_postal, ciudad) values (1263040481, 'Consalve', 'Champneys', 'Geer', '2212450521', '2621636607', 'Setï¿½bal', 'Northwestern', '356', '2830-152', 'Santo Andrï¿½');
 insert into PERITOS (dpi_perito, nombre_perito, apellido_perito1, apellido_perito2, telefono_contacto, telefono_oficina, clase_via, nombre_via, numero_via, cod_postal, ciudad) values (2266323237, 'Rex', 'Da Costa', 'Cavalier', '2374678532', '4019401306', 'Manitoba', 'Boyd', '6', 'R6M', 'Morden');
-insert into PERITOS (dpi_perito, nombre_perito, apellido_perito1, apellido_perito2, telefono_contacto, telefono_oficina, clase_via, nombre_via, numero_via, cod_postal, ciudad) values (9777746314, 'Aldous', 'Lode', 'Worsley', '3819653445', '3228281266', 'Braga', 'Manitowish', '1600', '4830-184', 'Quintã');
-insert into PERITOS (dpi_perito, nombre_perito, apellido_perito1, apellido_perito2, telefono_contacto, telefono_oficina, clase_via, nombre_via, numero_via, cod_postal, ciudad) values (1009636554, 'Randi', 'Pearsey', 'Armfirld', '6803065184', '3538157521', 'Provence-Alpes-Côte d''Azur', 'Calypso', '5', '13219 CEDEX 02', 'Marseille');
+insert into PERITOS (dpi_perito, nombre_perito, apellido_perito1, apellido_perito2, telefono_contacto, telefono_oficina, clase_via, nombre_via, numero_via, cod_postal, ciudad) values (9777746314, 'Aldous', 'Lode', 'Worsley', '3819653445', '3228281266', 'Braga', 'Manitowish', '1600', '4830-184', 'Quintï¿½');
+insert into PERITOS (dpi_perito, nombre_perito, apellido_perito1, apellido_perito2, telefono_contacto, telefono_oficina, clase_via, nombre_via, numero_via, cod_postal, ciudad) values (1009636554, 'Randi', 'Pearsey', 'Armfirld', '6803065184', '3538157521', 'Provence-Alpes-Cï¿½te d''Azur', 'Calypso', '5', '13219 CEDEX 02', 'Marseille');
 
 insert into COMPANIAS (nombre_compania, nombre_via, numero_via, cod_postal, telefono_contratacion, telefono_siniestros) values ('Adams, Schulist and Gutkowski', 'Forest Dale', '977', '68400-000', '1456186951', '6733190366');
 insert into COMPANIAS (nombre_compania, nombre_via, numero_via, cod_postal, telefono_contratacion, telefono_siniestros) values ('McDermott Inc', 'Park Meadow', '6', '116 45', '4347078088', '2429581865');
@@ -166,24 +164,24 @@ insert into COMPANIAS (nombre_compania, nombre_via, numero_via, cod_postal, tele
 insert into COMPANIAS (clase_via) values ('Languedoc-Roussillon');
 insert into COMPANIAS (clase_via) values ('Minnesota');
 insert into COMPANIAS (clase_via) values ('Portalegre');
-insert into COMPANIAS (clase_via) values ('Rhône-Alpes');
-insert into COMPANIAS (clase_via) values ('Skåne');
+insert into COMPANIAS (clase_via) values ('Rhï¿½ne-Alpes');
+insert into COMPANIAS (clase_via) values ('Skï¿½ne');
 insert into COMPANIAS (clase_via) values ('Stockholm');
 insert into COMPANIAS (clase_via) values ('Aveiro');
-insert into COMPANIAS (clase_via) values ('Québec');
-insert into COMPANIAS (clase_via) values ('Värmland');
+insert into COMPANIAS (clase_via) values ('Quï¿½bec');
+insert into COMPANIAS (clase_via) values ('Vï¿½rmland');
 insert into COMPANIAS (clase_via) values ('Bourgogne');
 
 
-insert into SINIESTROS (id_siniestro, fecha_siniestro, causas, aceptado, indemnizacion, numero_poliza, dpi_perito) values (1, '02/02/2022', 'pérdidas financieras', 'no', 5509, 7888673066, 9073562873);
+insert into SINIESTROS (id_siniestro, fecha_siniestro, causas, aceptado, indemnizacion, numero_poliza, dpi_perito) values (1, '02/02/2022', 'pï¿½rdidas financieras', 'no', 5509, 7888673066, 9073562873);
 insert into SINIESTROS (id_siniestro, fecha_siniestro, causas, aceptado, indemnizacion, numero_poliza, dpi_perito) values (2, '06/03/2022', 'robos', 'no', 3515, 6825595995, 7764279789);
-insert into SINIESTROS (id_siniestro, fecha_siniestro, causas, aceptado, indemnizacion, numero_poliza, dpi_perito) values (3, '24/08/2022', 'pérdidas financieras', 'si', 2031, 3494643261, 9796169800);
+insert into SINIESTROS (id_siniestro, fecha_siniestro, causas, aceptado, indemnizacion, numero_poliza, dpi_perito) values (3, '24/08/2022', 'pï¿½rdidas financieras', 'si', 2031, 3494643261, 9796169800);
 insert into SINIESTROS (id_siniestro, fecha_siniestro, causas, aceptado, indemnizacion, numero_poliza, dpi_perito) values (4, '12/12/2022', 'desmembramiento', 'no', 7884, 4374089466, 6293375670);
 insert into SINIESTROS (id_siniestro, fecha_siniestro, causas, aceptado, indemnizacion, numero_poliza, dpi_perito) values (5, '30/10/2022', 'incendios', 'no', 9631, 1279, 6983230122);
-insert into SINIESTROS (id_siniestro, fecha_siniestro, causas, aceptado, indemnizacion, numero_poliza, dpi_perito) values (6, '10/08/2022', 'accidentes de automóvil', 'si', 4592, 103928061, 415871194);
+insert into SINIESTROS (id_siniestro, fecha_siniestro, causas, aceptado, indemnizacion, numero_poliza, dpi_perito) values (6, '10/08/2022', 'accidentes de automï¿½vil', 'si', 4592, 103928061, 415871194);
 insert into SINIESTROS (id_siniestro, fecha_siniestro, causas, aceptado, indemnizacion, numero_poliza, dpi_perito) values (7, '11/01/2022', 'desmembramiento', 'no', 8853, 3494643261, 8922876562);
 insert into SINIESTROS (id_siniestro, fecha_siniestro, causas, aceptado, indemnizacion, numero_poliza, dpi_perito) values (8, '09/07/2022', 'desmembramiento', 'no', 1172, 5617135828, 1263040481);
-insert into SINIESTROS (id_siniestro, fecha_siniestro, causas, aceptado, indemnizacion, numero_poliza, dpi_perito) values (9, '08/08/2022', 'accidentes de automóvil', 'si', 5957, 6641928648, 2266323237);
+insert into SINIESTROS (id_siniestro, fecha_siniestro, causas, aceptado, indemnizacion, numero_poliza, dpi_perito) values (9, '08/08/2022', 'accidentes de automï¿½vil', 'si', 5957, 6641928648, 2266323237);
 insert into SINIESTROS (id_siniestro, fecha_siniestro, causas, aceptado, indemnizacion, numero_poliza, dpi_perito) values (10, '02/01/2022', 'robos', 'si', 1823, 6641928648, 1009636554);
 
 insert into COMPANIAS_SEGUROS(id,numero_poliza,nombre_compania) values(1,7888673066,'Adams, Schulist and Gutkowski');
