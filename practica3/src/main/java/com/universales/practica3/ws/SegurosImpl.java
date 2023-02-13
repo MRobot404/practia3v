@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import com.universales.practica3.dto.SegurosDTO;
 import com.universales.practica3.entity.Seguros;
+import com.universales.practica3.repository.CompaniasRepository;
 import com.universales.practica3.repository.SegurosRepository;
 import com.universales.practica3.wsint.SegurosInt;
 
@@ -16,6 +17,9 @@ public class SegurosImpl implements SegurosInt{
 
 	@Autowired
 	SegurosRepository segurosRepository;
+	
+	@Autowired
+	CompaniasRepository companiasRepository;
 	
 	
 	@Override

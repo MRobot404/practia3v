@@ -51,7 +51,7 @@ CONSTRAINT pk_siniestros primary key(ID_SINIESTRO),
 CONSTRAINT fk_siniestros_peritos foreign key(DPI_PERITO) references PERITOS(DPI_PERITO)
 );
 
-ALTER TABLE SINIESTROS
+ALTER  TABLE SINIESTROS
 ADD CONSTRAINT chk_siniestros_accepted
 CHECK (ACEPTADO in ('si','no'));
 
@@ -76,7 +76,7 @@ CONSTRAINT pk_peritos primary key(DPI_PERITO)
 CREATE TABLE COMPANIAS_SEGUROS(
 ID INT NOT NULL,
 NUMERO_POLIZA INT,
-NOMBRE_COMPANIA VARCHAR(255),
+NOMBRE_COMPANIA VARCHAR(255),   
 CONSTRAINT pk_companias_seguros primary key(ID),
 CONSTRAINT fk_seguros_companiaseguros foreign key(NUMERO_POLIZA) references SEGUROS(NUMERO_POLIZA),
 CONSTRAINT fk_companias_companiaseguros foreign key(NOMBRE_COMPANIA)references COMPANIAS(NOMBRE_COMPANIA)

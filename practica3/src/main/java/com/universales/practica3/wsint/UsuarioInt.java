@@ -1,7 +1,9 @@
 package com.universales.practica3.wsint;
 
+import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,5 +31,10 @@ public interface UsuarioInt {
 
 	@GetMapping("/buscar/por/{idUsuario}")
 	List<Usuario> buscarPorIdUsuario(@PathVariable("idUsuario") Integer idUsuario);
+
+	Usuario getUsuarioByUsuarioAndContrasena(String usuario, String contrasena) throws UserPrincipalNotFoundException;
+	
+	@PostMapping("/login")
+	ResponseEntity<Object> loginUser(Usuario usuario);
 
 }

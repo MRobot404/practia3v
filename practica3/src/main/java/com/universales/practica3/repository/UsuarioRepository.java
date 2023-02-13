@@ -11,4 +11,5 @@ import com.universales.practica3.entity.Usuario;
 @Repository("usuarioRepository")
 public interface UsuarioRepository extends JpaRepository<Usuario, Serializable>{
 	public List<Usuario> findByidUsuario(int idUsuario);
+	public Usuario findByUserAndContrasena(String user,String contrasena);
 }

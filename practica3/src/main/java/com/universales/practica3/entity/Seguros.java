@@ -1,12 +1,13 @@
 package com.universales.practica3.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "SEGUROS")
@@ -39,7 +40,15 @@ public class Seguros implements Serializable {
 	@Column(name="DPI_CLIENTE")
 	private Long dpiCliente;
 	
-
+	@ManyToMany
+	@JoinTable(
+			name="COMPANIAS_SEGUROS",
+			joinColumns = @JoinColumn(name="NUMERO_POLIZA"),
+			inverseJoinColumns = @JoinColumn(name="NOMBRE_COMPANIA"))
+	@JsonManagedReference
+			private List<Companias> companiaSeguros=new ArrayList<>();
+	
+	
 
 	public Long getNumeroPoliza() {
 		return numeroPoliza;
@@ -96,6 +105,17 @@ public class Seguros implements Serializable {
 	public void setDpiCliente(Long dpiCliente) {
 		this.dpiCliente = dpiCliente;
 	}
+
+	public List<Companias> getCompaniaSeguros() {
+		return companiaSeguros;
+	}
+
+	public void setCompaniaSeguros(List<Companias> companiaSeguros) {
+		this.companiaSeguros = companiaSeguros;
+	}
+
+	
+
 	
 	
 	
