@@ -18,7 +18,7 @@ import com.universales.practica3.entity.Clientes;
 @RequestMapping("/auth/clientes")
 @CrossOrigin
 public interface ClientesInt {
-	
+
 	@GetMapping("/buscar")
 	public List<Clientes> buscar();
 
@@ -27,5 +27,8 @@ public interface ClientesInt {
 
 	@DeleteMapping(path = "/eliminar/{dpiCliente}")
 	void eliminar(@PathVariable("dpiCliente") Long dpiCliente);
+
+	@GetMapping("/paginar")
+	List<Clientes> getUsuario(int page, int size);
 
 }

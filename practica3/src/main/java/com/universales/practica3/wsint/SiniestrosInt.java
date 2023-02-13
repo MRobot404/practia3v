@@ -28,6 +28,9 @@ public interface SiniestrosInt {
 	@DeleteMapping(path = "/eliminar/{idSiniestro}")
 	void eliminar(@PathVariable("idSiniestro") Integer idSiniestro);
 	
+	@GetMapping("/paginar")
+	List<Siniestros> getSiniestro(int page, int size);
+	
 	
 
 }

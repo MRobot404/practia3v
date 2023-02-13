@@ -28,4 +28,7 @@ public interface PeritosInt {
 	@DeleteMapping("/eliminar/{dpiPerito}")
 	void eliminar(@PathVariable("dpiPerito") Long dpiPerito);
 
+	@GetMapping("/paginar")
+	List<Peritos> getPeritos(int page, int size);
+
 }

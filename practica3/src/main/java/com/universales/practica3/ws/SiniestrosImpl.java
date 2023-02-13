@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import com.universales.practica3.dto.SiniestrosDTO;
@@ -43,4 +46,22 @@ public class SiniestrosImpl implements SiniestrosInt {
 		}
 
 	}
+	
+	@Override
+	public List<Siniestros> getSiniestro(int page, int size){
+		Pageable pageable = PageRequest.of(page, size);
+		Page<Siniestros> siniestros= siniestrosRepository.findAll(pageable);
+		return siniestros.stream().map(siniestro -> {
+			Siniestros dto= new Siniestros();
+			dto.setAceptado(siniestro.getAceptado());
+			dto.setCausas(siniestro.getCausas());
+			dto.setDpiPerito(siniestro.getDpiPerito());
+			dto.setFechaSiniestro(siniestro.getFechaSiniestro());
+			dto.setIdSiniestro(siniestro.getIdSiniestro());
+			dto.setIndemnizacion(siniestro.getIndemnizacion());
+			dto.setSeguros(siniestro.getSeguros());
+			return dto;
+		}).toList();
+	}
+	
 }
