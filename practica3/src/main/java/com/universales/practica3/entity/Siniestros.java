@@ -3,16 +3,16 @@ package com.universales.practica3.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,14 +23,12 @@ public class Siniestros implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	@GenericGenerator(name = "ID_SINIESTRO", strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator", parameters = {
-			@Parameter(name = "sequence_name", value = "test_seq1"), @Parameter(name = "initial_value", value = "1"),
-			@Parameter(name = "increment_size", value = "1"), @Parameter(name = "schema", value = "SEGUNI") })
-	@Id
-	@Basic(optional = false)
-	@Column(name = "ID_SINIESTRO")
-	@GeneratedValue(generator = "ID_SINIESTRO")
-	private Integer idSiniestro;
+    @Id
+    @Basic(optional = false)
+    @Column(name="ID_SINIESTRO")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TEST_SEQ1")
+        @SequenceGenerator(sequenceName = "TEST_SEQ1", allocationSize = 1, name = "TEST_SEQ1")
+    private Integer idSiniestro;
 
 	@Column(name = "FECHA_SINIESTRO")
 	private Date fechaSiniestro;
@@ -43,14 +41,13 @@ public class Siniestros implements Serializable {
 
 	@Column(name = "INDEMNIZACION")
 	private Integer indemnizacion;
-	
 
 	@Column(name = "DPI_PERITO")
 	private Long dpiPerito;
 
 	@ManyToOne
 	@JoinColumn(name = "NUMERO_POLIZA")
-	Seguros seguros;
+	private Seguros seguro;
 
 	public Integer getIndemnizacion() {
 		return indemnizacion;
@@ -58,14 +55,6 @@ public class Siniestros implements Serializable {
 
 	public void setIndemnizacion(Integer indemnizacion) {
 		this.indemnizacion = indemnizacion;
-	}
-
-	public Seguros getSeguros() {
-		return seguros;
-	}
-
-	public void setSeguros(Seguros seguros) {
-		this.seguros = seguros;
 	}
 
 	public Integer getIdSiniestro() {
@@ -106,6 +95,14 @@ public class Siniestros implements Serializable {
 
 	public void setDpiPerito(Long dpiPerito) {
 		this.dpiPerito = dpiPerito;
+	}
+
+	public Seguros getSeguro() {
+		return seguro;
+	}
+
+	public void setSeguro(Seguros seguro) {
+		this.seguro = seguro;
 	}
 
 }

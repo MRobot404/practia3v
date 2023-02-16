@@ -3,6 +3,8 @@ package com.universales.practica3.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+
+
 public class SegurosDTO implements Serializable {
 
 	/**
@@ -17,6 +19,7 @@ public class SegurosDTO implements Serializable {
 	private String condicionesParticulares;
 	private String observaciones;
 	private Long dpiCliente;
+	
 
 	public Long getNumeroPoliza() {
 		return numeroPoliza;
@@ -73,5 +76,6 @@ public class SegurosDTO implements Serializable {
 	public void setDpiCliente(Long dpiCliente) {
 		this.dpiCliente = dpiCliente;
 	}
+
 
 }

@@ -1,9 +1,6 @@
 package com.universales.practica3.dto;
 
 import java.io.Serializable;
-import java.util.List;
-
-import com.universales.practica3.entity.Seguros;
 
 public class ClientesDTO implements Serializable{
 
@@ -22,7 +19,6 @@ public class ClientesDTO implements Serializable{
 	private String ciudad;
 	private String telefono;
 	private String observaciones;
-	private List<Seguros> seguroslist;
 	public Long getDpiCliente() {
 		return dpiCliente;
 	}
@@ -89,12 +85,5 @@ public class ClientesDTO implements Serializable{
 	public void setObservaciones(String observaciones) {
 		this.observaciones = observaciones;
 	}
-	public List<Seguros> getSeguroslist() {
-		return seguroslist;
-	}
-	public void setSeguroslist(List<Seguros> seguroslist) {
-		this.seguroslist = seguroslist;
-	}
-	
 
 }

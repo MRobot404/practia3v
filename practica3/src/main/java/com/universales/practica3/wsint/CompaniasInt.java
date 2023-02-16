@@ -30,5 +30,14 @@ public interface CompaniasInt {
 	void eliminar(@PathVariable("nombreCompania")  String nombreCompania);
 	
 	
+	@GetMapping("/buscar/por/{codPostal}")
+	List<Companias> buscarPorCodigoPostal(@PathVariable("codPostal") String codPostal);
+	
+	@GetMapping("/buscar/porr/{numeroVia}")
+	List<Companias> buscarPorNumeroViaFinalizaEn(@PathVariable("numeroVia")  String numeroVia);
+
+	@GetMapping("buscar/notasVacias")
+	List<Companias> buscarNotasVacias();
+	
 
 }

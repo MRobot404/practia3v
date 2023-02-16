@@ -30,5 +30,12 @@ public interface ClientesInt {
 
 	@GetMapping("/paginar")
 	List<Clientes> getUsuario(int page, int size);
+	
+	@GetMapping("/buscar/por/{telefono}")
+	List<Clientes> buscarPorTelefonoEmpezado24(@PathVariable("telefono") String telefono);
+	
+	@GetMapping("/buscar/porr/{nombreCL}")
+	List<Clientes> buscarporNombre(@PathVariable("nombreCL") String nombreCL);
+	
 
 }

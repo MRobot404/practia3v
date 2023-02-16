@@ -3,12 +3,13 @@ package com.universales.practica3.entity;
 import java.io.Serializable;
 import java.util.List;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
 @Entity
 @Table(name = "CLIENTES")
 public class Clientes implements Serializable {
@@ -51,8 +52,8 @@ public class Clientes implements Serializable {
 
 	@Column(name = "OBSERVACIONES")
 	private String observaciones;
-
-	@OneToMany(mappedBy = "dpiCliente")
+	
+	@OneToMany(mappedBy = "dpiCliente", fetch=FetchType.LAZY)
 	private List<Seguros> seguroslist;
 
 	public Long getDpiCliente() {

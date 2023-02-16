@@ -10,8 +10,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -31,13 +29,11 @@ public class CompaniasSeguros implements Serializable {
 	@GeneratedValue(generator = "ID")
 	private Integer id;
 
-	@ManyToOne
-	@JoinColumn(name = "NOMBRE_COMPANIA")
-	private Companias compania;
+	@Column(name = "NOMBRE_COMPANIA")
+	private String compania;
 
-	@ManyToOne
-	@JoinColumn(name = "NUMERO_POLIZA")
-	private Seguros seguro;
+	@Column(name = "NUMERO_POLIZA")
+	private Long numeroPoliza;
 
 	public Integer getId() {
 		return id;
@@ -47,21 +43,25 @@ public class CompaniasSeguros implements Serializable {
 		this.id = id;
 	}
 
-	public Companias getCompania() {
+	
+
+	public String getCompania() {
 		return compania;
 	}
 
-	public void setCompania(Companias compania) {
+	public void setCompania(String compania) {
 		this.compania = compania;
 	}
 
-	public Seguros getSeguro() {
-		return seguro;
+	public Long getNumeroPoliza() {
+		return numeroPoliza;
 	}
 
-	public void setSeguro(Seguros seguro) {
-		this.seguro = seguro;
+	public void setNumeroPoliza(Long numeroPoliza) {
+		this.numeroPoliza = numeroPoliza;
 	}
+
+	
 
 	
 

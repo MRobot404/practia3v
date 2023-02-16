@@ -1,23 +1,21 @@
 package com.universales.practica3.dto;
 
-import java.io.Serializable;
 import java.util.Date;
 
-import com.universales.practica3.entity.Seguros;
 
-public class SiniestrosDTO implements Serializable {
+
+public class SiniestrosDTO {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
 	private Integer idSiniestro;
 	private Date fechaSiniestro;
 	private String causas;
 	private String aceptado;
 	private Integer indemnizacion;
 	private Long dpiPerito;
-	Seguros seguros;
+	private Long seguro;
 	public Integer getIdSiniestro() {
 		return idSiniestro;
 	}
@@ -54,12 +52,15 @@ public class SiniestrosDTO implements Serializable {
 	public void setDpiPerito(Long dpiPerito) {
 		this.dpiPerito = dpiPerito;
 	}
-	public Seguros getSeguros() {
-		return seguros;
+	public Long getSeguro() {
+		return seguro;
 	}
-	public void setSeguros(Seguros seguros) {
-		this.seguros = seguros;
+	public void setSeguro(long seguro) {
+		this.seguro = seguro;
 	}
+
+	
+	
 	
 	
 }

@@ -1,6 +1,7 @@
 package com.universales.practica3.wsint;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,4 +28,18 @@ public interface CompaniasSegurosInt {
 	
 	@DeleteMapping("/eliminar/{id}")
 	void eliminar(@PathVariable("id") Integer id);
+	
+	@GetMapping("/buscar/por/id/{id}")
+	Optional<CompaniasSeguros> buscarPorId(@PathVariable("id")  Integer id);
+	
+	@GetMapping("/buscar/por/compania/{compania}")
+	List<CompaniasSeguros> buscarPorCompania(@PathVariable("compania")  String compania);
+	
+	@GetMapping("/buscar/por/numeroPoliza/{numeroPoliza}")
+	Optional<CompaniasSeguros> buscarPorNumeroPoliza(@PathVariable("numeroPoliza") Long numeroPoliza);
+	
+	@GetMapping("/buscar/por/todos/{id}/{compania}/{numeroPoliza}")
+	List<CompaniasSeguros> buscarPorTodos(@PathVariable("id") Integer id,@PathVariable("compania") String compania,@PathVariable("numeroPoliza") Long numeroPoliza);
+	
+	
 }

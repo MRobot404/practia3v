@@ -15,7 +15,7 @@ public class JwtGeneratorImpl implements JwtGeneratorInterface{
 
 	private static final String SECRET = "secret";
 	private static final String MESSAGE = "Token generado exitosamente";
-	private static final long TOKENVALIDITYINSECONS = 1800;
+	private static final long TOKENVALIDITYINSECONS = 3600;
 
 	/**
 	 * Método para generar un token 

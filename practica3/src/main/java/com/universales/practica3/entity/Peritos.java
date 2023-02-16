@@ -1,10 +1,12 @@
 package com.universales.practica3.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -49,6 +51,9 @@ public class Peritos implements Serializable {
 
 	@Column(name = "CIUDAD")
 	private String ciudad;
+	
+	 @OneToMany(mappedBy = "dpiPerito")
+	  private List<Siniestros> siniestros;
 
 	public Long getDpiPerito() {
 		return dpiPerito;
@@ -137,5 +142,15 @@ public class Peritos implements Serializable {
 	public void setCiudad(String ciudad) {
 		this.ciudad = ciudad;
 	}
+
+	public List<Siniestros> getSiniestros() {
+		return siniestros;
+	}
+
+	public void setSiniestros(List<Siniestros> siniestros) {
+		this.siniestros = siniestros;
+	}
+	
+	
 
 }

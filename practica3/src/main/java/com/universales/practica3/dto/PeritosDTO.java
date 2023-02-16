@@ -2,6 +2,7 @@ package com.universales.practica3.dto;
 
 import java.io.Serializable;
 
+
 public class PeritosDTO implements Serializable {
 
 	/**
@@ -107,5 +108,6 @@ public class PeritosDTO implements Serializable {
 	public void setCiudad(String ciudad) {
 		this.ciudad = ciudad;
 	}
+
 
 }
