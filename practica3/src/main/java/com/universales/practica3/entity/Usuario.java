@@ -21,7 +21,7 @@ public class Usuario implements Serializable {
 	private static final long serialVersionUID = 3879288915592808874L;
 	@GenericGenerator(name = "ID_USUARIO", strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator", parameters = {
 			@Parameter(name = "sequence_name", value = "test_seq"), @Parameter(name = "initial_value", value = "1"),
-			@Parameter(name = "increment_size", value = "1"), @Parameter(name = "schema", value = "SEGUNI") })
+			@Parameter(name = "increment_size", value = "1"), @Parameter(name = "schema", value = "SEGUNIA") })
 	@Id
 	@Basic(optional = false)
 	@Column(name = "ID_USUARIO")

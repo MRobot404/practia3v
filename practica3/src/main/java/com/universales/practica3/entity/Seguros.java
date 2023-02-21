@@ -21,7 +21,7 @@ public class Seguros implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@GenericGenerator(name = "NUMERO_POLIZA", strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator", parameters = {
 			@Parameter(name = "sequence_name", value = "test_seq2"), @Parameter(name = "initial_value", value = "1"),
-			@Parameter(name = "increment_size", value = "1"), @Parameter(name = "schema", value = "SEGUNI") })
+			@Parameter(name = "increment_size", value = "1"), @Parameter(name = "schema", value = "SEGUNIA") })
 	@Id
 	@Basic(optional = false)
 	@Column(name = "NUMERO_POLIZA")
