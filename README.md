@@ -1,7 +1,7 @@
 
 ## Tabla de contenidos
 1. [Informacion general](#informacion-general)
-2. [Version proyecto](#version)
+2. [Version proyecto](#Version)
 3. [Tecnologias](#tecnologias)
 4. [Instalacion](#instalacion)
 ### Informacion general
@@ -9,6 +9,7 @@
 Proyecto Java Springboot con JWT y conexión con base de datos Oracle para la autenticación y almacenamiento de datos seguros.
 
 ### Version
+***
 La versión actual del proyecto es la 0.0.1-SNAPSHOT.
 
 
