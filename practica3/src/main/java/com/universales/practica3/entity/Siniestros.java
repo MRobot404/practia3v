@@ -3,7 +3,6 @@ package com.universales.practica3.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,14 +13,13 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
 @Table(name = "SINIESTROS")
+@Data
 public class Siniestros implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -48,61 +46,5 @@ public class Siniestros implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "NUMERO_POLIZA")
 	private Seguros seguro;
-
-	public Integer getIndemnizacion() {
-		return indemnizacion;
-	}
-
-	public void setIndemnizacion(Integer indemnizacion) {
-		this.indemnizacion = indemnizacion;
-	}
-
-	public Integer getIdSiniestro() {
-		return idSiniestro;
-	}
-
-	public void setIdSiniestro(Integer idSiniestro) {
-		this.idSiniestro = idSiniestro;
-	}
-
-	public Date getFechaSiniestro() {
-		return fechaSiniestro;
-	}
-
-	public void setFechaSiniestro(Date fechaSiniestro) {
-		this.fechaSiniestro = fechaSiniestro;
-	}
-
-	public String getCausas() {
-		return causas;
-	}
-
-	public void setCausas(String causas) {
-		this.causas = causas;
-	}
-
-	public String getAceptado() {
-		return aceptado;
-	}
-
-	public void setAceptado(String aceptado) {
-		this.aceptado = aceptado;
-	}
-
-	public Long getDpiPerito() {
-		return dpiPerito;
-	}
-
-	public void setDpiPerito(Long dpiPerito) {
-		this.dpiPerito = dpiPerito;
-	}
-
-	public Seguros getSeguro() {
-		return seguro;
-	}
-
-	public void setSeguro(Seguros seguro) {
-		this.seguro = seguro;
-	}
 
 }

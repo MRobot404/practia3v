@@ -10,14 +10,13 @@ import org.hibernate.annotations.Parameter;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table(name = "SEGUROS")
+@Data
 public class Seguros implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	@GenericGenerator(name = "NUMERO_POLIZA", strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator", parameters = {
 			@Parameter(name = "sequence_name", value = "test_seq2"), @Parameter(name = "initial_value", value = "1"),
@@ -50,69 +49,5 @@ public class Seguros implements Serializable {
 	@JoinTable(name = "COMPANIAS_SEGUROS", joinColumns = @JoinColumn(name = "NUMERO_POLIZA"), inverseJoinColumns = @JoinColumn(name = "NOMBRE_COMPANIA"))
 	@JsonManagedReference
 	private List<Companias> companiaSeguros = new ArrayList<>();
-
-	public Long getNumeroPoliza() {
-		return numeroPoliza;
-	}
-
-	public void setNumeroPoliza(Long numeroPoliza) {
-		this.numeroPoliza = numeroPoliza;
-	}
-
-	public String getRamo() {
-		return ramo;
-	}
-
-	public void setRamo(String ramo) {
-		this.ramo = ramo;
-	}
-
-	public Date getFechaInicio() {
-		return fechaInicio;
-	}
-
-	public void setFechaInicio(Date fechaInicio) {
-		this.fechaInicio = fechaInicio;
-	}
-
-	public Date getFechaVencimiento() {
-		return fechaVencimiento;
-	}
-
-	public void setFechaVencimiento(Date fechaVencimiento) {
-		this.fechaVencimiento = fechaVencimiento;
-	}
-
-	public String getCondicionesParticulares() {
-		return condicionesParticulares;
-	}
-
-	public void setCondicionesParticulares(String condicionesParticulares) {
-		this.condicionesParticulares = condicionesParticulares;
-	}
-
-	public String getObservaciones() {
-		return observaciones;
-	}
-
-	public void setObservaciones(String observaciones) {
-		this.observaciones = observaciones;
-	}
-
-	public Long getDpiCliente() {
-		return dpiCliente;
-	}
-
-	public void setDpiCliente(Long dpiCliente) {
-		this.dpiCliente = dpiCliente;
-	}
-
-	public List<Companias> getCompaniaSeguros() {
-		return companiaSeguros;
-	}
-
-	public void setCompaniaSeguros(List<Companias> companiaSeguros) {
-		this.companiaSeguros = companiaSeguros;
-	}
 
 }

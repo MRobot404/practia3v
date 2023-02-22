@@ -4,6 +4,8 @@ import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,6 +31,7 @@ public class UsuarioImpl implements UsuarioInt {
 	@Autowired
 	private ModelMapper modelMapper;
 
+	private static final Log LOG = LogFactory.getLog(UsuarioImpl.class);
 	
 	/**
 	 * Devuelve la lista de todos los Usuarios.
@@ -99,6 +102,7 @@ public class UsuarioImpl implements UsuarioInt {
 			}
 			return new ResponseEntity<>( jwtGenerator.generateToken(usuario), HttpStatus.OK);
 		} catch (UserPrincipalNotFoundException e) {
+			LOG.error(e);
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
 		}
 	}
