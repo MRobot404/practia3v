@@ -12,6 +12,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
+
 @Entity
 @Table(name = "USUARIO")
 @Data
@@ -32,5 +33,5 @@ public class Usuario implements Serializable {
 
 	@Column(name = "CONTRASENA")
 	private String contrasena;
-	
+
 }
