@@ -1,8 +1,10 @@
 package com.universales.practica3;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -49,5 +51,38 @@ class SegurosImplTest {
 		}
 	}
 	
+	@Test
+	void eliminarTest() {
+		try {
+			Long numeropoliza=(long) 14;
+			seguro.eliminar(numeropoliza);
+		} catch (Exception e) {
+			LOG.error(e.getMessage());
+			fail("No se borro el seguro");
+		}
+	}
+	
+	@Test
+	void buscarObservacionesVaciasTest() {
+	List<Seguros> seguros=seguro.buscarObservacionesVacias();
+	if(seguros.get(0)!=null) {
+		assertTrue(true);
+	}else {
+		LOG.error("El usuario no existe");
+		fail("Usuario no encontrado");
+	}
+	}
+	
+	@Test
+	void buscarFechaAntesTest() {
+	try {
+		List<Seguros> seguros=seguro.buscarFechaAntes(dateFormat.parse("2022-02-24 15:30:00"));
+		if(seguros.get(0)!=null) {
+			assertTrue(true);
+		}
+	} catch (ParseException e) {
+		e.printStackTrace();
+	}
+	}
 	
 }
