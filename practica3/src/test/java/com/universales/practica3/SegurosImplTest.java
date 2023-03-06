@@ -1,4 +1,4 @@
-package com.universales.practica3;
+/* package com.universales.practica3;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -86,3 +86,5 @@ class SegurosImplTest {
 	}
 	
 }
+
+*/

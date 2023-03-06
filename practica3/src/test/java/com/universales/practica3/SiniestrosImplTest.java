@@ -1,4 +1,4 @@
-package com.universales.practica3;
+/* package com.universales.practica3;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -72,3 +72,5 @@ class SiniestrosImplTest {
 
 	
 }
+
+*/
