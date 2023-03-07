@@ -1,6 +1,6 @@
 --Creaci�n de usuario Seguni
 alter session set "_ORACLE_SCRIPT"=true;
-create user seguni identified by seguni;
+create user seguni identified by "0804";
 GRANT ALL PRIVILEGES TO seguni;
 
 
