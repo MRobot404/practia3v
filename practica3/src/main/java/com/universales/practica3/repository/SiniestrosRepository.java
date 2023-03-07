@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.universales.practica3.entity.Siniestros;
+import com.universales.libreria.Siniestros;
 
 @Repository("siniestrosRepository")
 public interface SiniestrosRepository extends JpaRepository<Siniestros,Serializable> {

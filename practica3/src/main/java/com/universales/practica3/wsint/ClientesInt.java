@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.universales.practica3.dto.ClientesDTO;
-import com.universales.practica3.entity.Clientes;
+import com.universales.libreria.Clientes;
 
 @RestController
 @RequestMapping("/auth/clientes")

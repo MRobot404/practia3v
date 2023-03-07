@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.universales.practica3.dto.SegurosDTO;
-import com.universales.practica3.entity.Seguros;
+import com.universales.libreria.Seguros;
 
 @RestController
 @RequestMapping("/auth/seguros")
