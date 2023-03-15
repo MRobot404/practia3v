@@ -3,10 +3,10 @@ package com.universales.practica3.security;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import com.universales.libreria.Usuario;
 
 import org.springframework.stereotype.Service;
 
-import com.universales.practica3.entity.Usuario;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

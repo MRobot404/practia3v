@@ -1,4 +1,4 @@
-package com.universales.practica3.entity;
+package com.universales.libreria;
 
 import java.io.Serializable;
 
@@ -35,3 +35,4 @@ public class Usuario implements Serializable {
 	private String contrasena;
 
 }
+

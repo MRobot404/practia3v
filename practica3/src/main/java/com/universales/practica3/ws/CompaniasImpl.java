@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.universales.practica3.dto.CompaniasDTO;
-import com.universales.practica3.entity.Companias;
+import com.universales.libreria.Companias;
 import com.universales.practica3.repository.CompaniasRepository;
 import com.universales.practica3.repository.CompaniasSegurosRepository;
 import com.universales.practica3.wsint.CompaniasInt;

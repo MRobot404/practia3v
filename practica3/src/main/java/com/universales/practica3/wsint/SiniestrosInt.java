@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.universales.practica3.dto.SiniestrosDTO;
-import com.universales.practica3.entity.Siniestros;
+import com.universales.libreria.Siniestros;
 
 @RestController
 @RequestMapping("/auth/siniestros")

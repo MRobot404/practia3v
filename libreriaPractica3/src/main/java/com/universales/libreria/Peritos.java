@@ -1,4 +1,4 @@
-package com.universales.practica3.entity;
+package com.universales.libreria;
 
 import java.io.Serializable;
 import java.util.List;

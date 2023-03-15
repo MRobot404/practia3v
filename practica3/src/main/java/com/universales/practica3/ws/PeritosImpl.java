@@ -11,7 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import com.universales.practica3.dto.PeritosDTO;
-import com.universales.practica3.entity.Peritos;
+import com.universales.libreria.Peritos;
 import com.universales.practica3.repository.PeritosRepository;
 import com.universales.practica3.repository.SiniestrosRepository;
 import com.universales.practica3.wsint.PeritosInt;
