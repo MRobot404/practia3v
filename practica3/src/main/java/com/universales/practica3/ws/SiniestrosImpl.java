@@ -11,8 +11,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import com.universales.practica3.dto.SiniestrosDTO;
-import com.universales.practica3.entity.Seguros;
-import com.universales.practica3.entity.Siniestros;
+import com.universales.libreria.Seguros;
+import com.universales.libreria.Siniestros;
 import com.universales.practica3.repository.SegurosRepository;
 import com.universales.practica3.repository.SiniestrosRepository;
 import com.universales.practica3.wsint.SiniestrosInt;

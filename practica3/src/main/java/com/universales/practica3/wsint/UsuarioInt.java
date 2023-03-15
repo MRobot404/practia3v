@@ -2,7 +2,7 @@ package com.universales.practica3.wsint;
 
 import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.List;
-
+import com.universales.libreria.Usuario;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.universales.practica3.dto.UsuarioDTO;
-import com.universales.practica3.entity.Usuario;
-
 @RestController
 @RequestMapping("/noauth/usuarios")
 @CrossOrigin

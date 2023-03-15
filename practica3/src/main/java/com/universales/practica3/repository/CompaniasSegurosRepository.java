@@ -7,7 +7,7 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.universales.practica3.entity.CompaniasSeguros;
+import com.universales.libreria.CompaniasSeguros;
 
 @Repository("companiassegurosRepository")
 public interface CompaniasSegurosRepository extends JpaRepository<CompaniasSeguros, Serializable> {

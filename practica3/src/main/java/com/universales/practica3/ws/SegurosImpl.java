@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.universales.practica3.dto.SegurosDTO;
-import com.universales.practica3.entity.Seguros;
+import com.universales.libreria.Seguros;
 import com.universales.practica3.repository.CompaniasSegurosRepository;
 import com.universales.practica3.repository.SegurosRepository;
 import com.universales.practica3.wsint.SegurosInt;

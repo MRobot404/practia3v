@@ -11,7 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import com.universales.practica3.dto.ClientesDTO;
-import com.universales.practica3.entity.Clientes;
+import com.universales.libreria.Clientes;
 import com.universales.practica3.repository.ClientesRepository;
 import com.universales.practica3.repository.SegurosRepository;
 import com.universales.practica3.wsint.ClientesInt;

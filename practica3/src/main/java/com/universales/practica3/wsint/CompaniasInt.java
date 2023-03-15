@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.universales.practica3.dto.CompaniasDTO;
-import com.universales.practica3.entity.Companias;
+import com.universales.libreria.Companias;
 
 
 @RestController

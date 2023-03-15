@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.universales.practica3.wsint.UsuarioInt;
 import com.universales.practica3.dto.UsuarioDTO;
-import com.universales.practica3.entity.Usuario;
+import com.universales.libreria.Usuario;
 import com.universales.practica3.repository.UsuarioRepository;
 import com.universales.practica3.security.JwtGeneratorInterface;
 
