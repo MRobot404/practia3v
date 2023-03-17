@@ -33,6 +33,6 @@ public interface UsuarioInt {
 	Usuario getUsuarioByUsuarioAndContrasena(String usuario, String contrasena) throws UserPrincipalNotFoundException;
 	
 	@PostMapping("/login")
-	ResponseEntity<Object> loginUser(Usuario usuario);
+	ResponseEntity<Object> loginUser(UsuarioDTO usuario);
 
 }
