@@ -19,7 +19,7 @@ public class FilterConfig {
 	FilterRegistrationBean<JwtFilter> jwtFilter() {
 		FilterRegistrationBean<JwtFilter> filter = new FilterRegistrationBean<>();
 		filter.setFilter(new JwtFilter());
-		filter.addUrlPatterns("/auth/*");
+        filter.addUrlPatterns("/auth/*");
 		return filter;
 	}
 }
