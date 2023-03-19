@@ -91,7 +91,7 @@ public class UsuarioImpl implements UsuarioInt {
 	 */
 	
 	@Override
-	public ResponseEntity<Object> loginUser(@RequestBody Usuario usuario) {
+	public ResponseEntity<Object> loginUser(@RequestBody UsuarioDTO usuario) {
 		try {
 			if (usuario.getUser() == null || usuario.getContrasena() == null) {
 				throw new UserPrincipalNotFoundException("Usuario o contraseña vacio");
@@ -100,7 +100,9 @@ public class UsuarioImpl implements UsuarioInt {
 			if (userData == null) {
 				throw new UserPrincipalNotFoundException("Usuario o contraseña incorrectos");
 			}
-			return new ResponseEntity<>( jwtGenerator.generateToken(usuario), HttpStatus.OK);
+			usuario.setToken(jwtGenerator.generateToken(usuario));
+			usuario.setContrasena(null);
+			return new ResponseEntity<>( usuario, HttpStatus.OK);
 		} catch (UserPrincipalNotFoundException e) {
 			LOG.error(e);
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);

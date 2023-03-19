@@ -11,5 +11,8 @@ public class UsuarioDTO implements Serializable {
 	private Integer idUsuario;
 	private String user;
 	private String contrasena;
+	private transient Object token;
 
+
+	
 }

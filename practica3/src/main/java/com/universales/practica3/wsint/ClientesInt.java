@@ -18,7 +18,7 @@ import com.universales.libreria.Clientes;
 @RequestMapping("/auth/clientes")
 @CrossOrigin
 public interface ClientesInt {
-
+	
 	@GetMapping("/buscar")
 	public List<Clientes> buscar();
 
