@@ -128,7 +128,7 @@ insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via,
 insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via, nombre_via, numero_via, cod_postal, ciudad, telefono) values (5617135828, 'Arvin', 'Alflatt', 'Doorey', 'Pays de la Loire', 'Ruskin', '5116', '44324 CEDEX 3', 'Nantes', '1002410517');
 insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via, nombre_via, numero_via, cod_postal, ciudad, telefono) values (2758422762, 'Wynny', 'Lomath', 'Boyle', 'Lisboa', 'Havey', '7', '2655-082', 'Fonte Boa da Brincosa', '3831305954');
 insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via, nombre_via, numero_via, cod_postal, ciudad, telefono) values (6962426483, 'Flori', 'Kropach', 'Metcalfe', 'Halland', 'Claremont', '5513', '434 33', 'Kungsbacka', '6361097256');
-
+insert into CLIENTES (dpi_cliente, nombre_cl, apellido_1, apellido_2, clase_via, nombre_via, numero_via, cod_postal, telefono) values (2127944682045, 'Hettie', 'Prendergrass', 'Skirrow', 'France', 'Tarbes', '953', '65911 CEDEX 9', '7072915849');
 
 insert into SEGUROS (numero_poliza, fecha_inicio, fecha_vencimiento, dpi_cliente) values (7888673066, '24/11/2022', '19/10/2021', 959991787);
 insert into SEGUROS (numero_poliza, fecha_inicio, fecha_vencimiento, dpi_cliente) values (6825595995, '14/11/2022', '30/05/2022', 3529394415);
