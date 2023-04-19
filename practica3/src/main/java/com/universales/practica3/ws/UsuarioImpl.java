@@ -100,7 +100,7 @@ public class UsuarioImpl implements UsuarioInt {
 			if (userData == null) {
 				throw new UserPrincipalNotFoundException("Usuario o contraseña incorrectos");
 			}
-			usuario.setToken(jwtGenerator.generateToken(usuario));
+			usuario.setToken(jwtGenerator.generateToken(userData));
 			usuario.setContrasena(null);
 			return new ResponseEntity<>( usuario, HttpStatus.OK);
 		} catch (UserPrincipalNotFoundException e) {

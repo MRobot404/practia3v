@@ -2,6 +2,7 @@ package com.universales.practica3.wsint;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,14 +29,24 @@ public interface ClientesInt {
 	@DeleteMapping(path = "/eliminar/{dpiCliente}")
 	void eliminar(@PathVariable("dpiCliente") Long dpiCliente);
 
-	@GetMapping("/paginar")
-	List<Clientes> getUsuario(int page, int size);
+
 	
 	@GetMapping("/buscar/por/{telefono}")
 	List<Clientes> buscarPorTelefonoEmpezado24(@PathVariable("telefono") String telefono);
 	
 	@GetMapping("/buscar/porr/{nombreCL}")
 	List<Clientes> buscarporNombre(@PathVariable("nombreCL") String nombreCL);
+
+	/**
+	 * Devuelve una lista de clientes paginada.
+	 * 
+	 * @param page el número de página a obtener
+	 * @param size el tamaño de la página
+	 * @return lista de clientes paginada
+	 */
+	
+	@GetMapping("/paginar")
+	Page<Clientes> getClientesPaginado(int page, int size);
 	
 
 }

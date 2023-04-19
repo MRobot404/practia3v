@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import com.universales.practica3.dto.UsuarioDTO;
+import com.universales.libreria.Usuario;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -24,7 +24,7 @@ public class JwtGeneratorImpl implements JwtGeneratorInterface{
 	 */
 	
 	@Override
-	public Map<String, String> generateToken(UsuarioDTO usuario) {
+	public Map<String, String> generateToken(Usuario usuario) {
 		String jwtToken = "";
 		Date now = new Date();
 		Date expiration = new Date(now.getTime() + TOKENVALIDITYINSECONS * 1000);

@@ -75,26 +75,9 @@ public class ClientesImpl implements ClientesInt {
 	 */
 
 	@Override
-	public List<Clientes> getUsuario(int page, int size) {
-		Pageable pageable = PageRequest.of(page, size);
-		Page<Clientes> clientes = clientesRepository.findAll(pageable);
-		return clientes.stream().map(cliente -> {
-			Clientes dto = new Clientes();
-			dto.setApellido1(cliente.getApellido1());
-			dto.setApellido2(cliente.getApellido2());
-			dto.setCiudad(cliente.getCiudad());
-			dto.setClaseVia(cliente.getClaseVia());
-			dto.setCodPostal(cliente.getCodPostal());
-			dto.setDpiCliente(cliente.getDpiCliente());
-			dto.setNombreCL(cliente.getNombreCL());
-			dto.setNombreVia(cliente.getNombreVia());
-			dto.setNombreVia(cliente.getNombreVia());
-			dto.setNumeroVia(cliente.getNumeroVia());
-			dto.setObservaciones(cliente.getObservaciones());
-			dto.setSeguroslist(cliente.getSeguroslist());
-			dto.setTelefono(cliente.getTelefono());
-			return dto;
-		}).toList();
+	public Page<Clientes>getClientesPaginado(int page,int size){
+		Pageable pageable=PageRequest.of(page, size);
+		return clientesRepository.findAll(pageable);
 	}
 	
 	/**
